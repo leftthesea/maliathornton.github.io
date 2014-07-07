@@ -1,0 +1,219 @@
+/*
+   Style Sheet for CS 156 
+
+   Malia Thornton
+   CS-156
+   Final Project/Portfolio Website
+   index.htm
+   
+*/
+
+header {
+	text-align: center;
+}
+
+body {
+	font-family: Arial;
+	margin: auto;
+	text-align: center;
+	width: 50%;
+}
+
+/* Main styles */
+
+section {
+	background-color: rgb(232,232,232);
+	padding: 5px 10px 20px 10px;
+	text-align: center;
+}
+
+#me {
+	-webkit-column-count: 2; 
+    -moz-column-count: 2; 
+    column-count: 2;
+	
+	-moz-column-rule: 1px solid black;
+	-webkit-column-rule: 1px solid black;
+	column-rule: 1px solid black;
+	
+	text-align: left;
+}
+
+footer {
+	text-align: center;
+}
+
+/* Navigation styles */
+
+#logo {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+}
+
+nav {
+	position: absolute;
+	left: 5%;
+	margin-top: 200px;
+}
+
+a {
+	color: black;
+	font-family: Century Gothic;
+	text-decoration: none;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+/* About me styles */
+
+#selfie {
+	clear: left;
+	float: right;
+	margin: auto;
+}
+
+article {
+	background-color: rgb(232,232,232);
+	padding: 5px 10px 100px 10px;
+	text-align: left;
+}
+
+/* Portfolio styles */
+
+table {
+	text-align: center;
+}
+
+td {
+	border-collapse: separate;
+	border-spacing: 50px;
+	padding: 5px;
+}
+
+#summary {
+	background-color: rgb(232,232,232);
+	padding: 5px 10px 0px 10px;
+	text-align: left;
+}
+
+/* Code styles */
+
+article {
+	margin: auto;
+}
+
+article h2 {
+	background-color: rgb(105, 105, 105);
+	color: white;
+}
+
+#links {
+	font-family: Century Gothic;
+	float: center;
+	text-align: center;
+}
+
+#back {
+	background-color: #CC0066;
+	text-align: center;
+}
+
+#back a {
+	color: white;
+}
+
+#basics, #cal {
+	background-color: rgb(232,232,232);
+	padding: 10px 10px 15px 10px;
+	position: fixed;
+	top: 0px;
+	right: 170px;
+	text-align: left;
+}
+
+.code, #html, #order, #calendar {
+	background-color: rgb(232,232,232);
+	display: block;
+	padding: 5px 10px 0px 10px;
+}
+
+#form {
+	background-color: rgb(232,232,232);
+	padding: 10px 10px 15px 5px;
+	position: fixed;
+	top: 0px;
+	right: 10px;
+	text-align: left;
+}
+
+aside h2 {
+	text-align: center;
+}
+
+/* Contact Form Styles */
+
+#contactme {
+	text-align: center;
+}
+
+fieldset {
+	border: none;
+	display: block;	
+	width: 100%;
+}
+
+legend {
+	float: left;
+	padding: 5px 0px;
+	width: 100%;
+}
+
+label {
+	clear: left;
+	display: block;
+	float: left;
+	margin: 10px 10px 15px 5px;
+	width: 30%;
+}
+
+input {
+	display: block;
+	float: left;
+	margin: 10px 0px;
+	width: 25%;
+}
+
+textarea {
+	display: block;
+	float: left;
+	height: 100px;
+	margin: 10px 0px;
+	width: 50%;
+}
+
+input[type="submit"], input[type="reset"] {
+	background-color: #CC0066;
+	border: none;
+	color: white;
+	display: inline;
+	float: none;
+	height: 50px;
+	width: 150px;
+}
+
+/* Selection styles */
+
+select {
+	display: block;
+	float: left;
+	margin: 10px 0px;
+}
+
+/* Validation styles */
+
+input:focus, select:focus, textarea:focus {
+	background-color: rgb(240,240,240);
+}
