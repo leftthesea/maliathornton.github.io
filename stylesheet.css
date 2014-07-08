@@ -159,9 +159,9 @@ aside h2 {
 	text-align: center;
 }
 
-#contactme h5 {
+h5 {
 	color: gray;
-	font-size: 9pt;
+	font-size: 9px;
 }
 
 fieldset {
