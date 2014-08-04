@@ -3,8 +3,7 @@
 <head>
 	<!--
 		Malia Thornton
-		CS-156
-		Final Project/Portfolio Website
+		Portfolio Website 2014
 	-->
 	
 	<title>Portfolio of Malia Thornton</title>
@@ -16,7 +15,7 @@
 
 <body>
 	<header>
-		<div id="logo"><a href="index.htm"><img src="logo.png" width="200px" height="200px"></a></div>
+		<div id="logo"><a href="index.htm"><img src="images/logo.png" width="200px" height="200px"></a></div>
 	</header>
 	
 	<nav>
@@ -27,11 +26,8 @@
 	</nav>
 	
 	<section>
-	<p id="contactme">Feel free to use the form below to contact Malia regarding inquiries.*<br/>
-		<h5>This form is currently in progress. For all inquiries, please <a href="mailto: maliathornton@gmail.com">
-		email me.</a></h5>
-	</p>
-		<form id="contact" name="contact">
+	<p id="contactme">Feel free to use the form below to contact Malia regarding inquiries.</p>
+		<form id="contact" name="contact" method="post" action="index.php">
 		<legend><h3>About you</h3></legend>
 			<fieldset id="info">
 				<label for="name"><strong>Name *</strong></label>
@@ -49,6 +45,10 @@
 				<label for="website"><strong>Website</strong></label>
 				<input name="website" id="website" type="text"
 					placeholder="e.g. Facebook" />
+				
+				<label for="website"><strong>Website</strong></label>
+				<input name="website" id="website" type="text"
+					placeholder="e.g. LinkedIn" />
 					
 				<label for="preference"><strong>Preferred Method of Contact</strong></label>
 				<select name="preference" id="preference" size="1">
@@ -71,10 +71,31 @@
 		</form>
 	</section>
 	
+	<!-- PHP used to make the form functional -->
+	<?php
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$comments = $_POST['comments'];
+		$from = 'From: Portfolio of Malia Thornton';
+		$to = 'maliathornton@gmail.com';
+		$subject = 'Hello';
+		$human = $_POST['human'];
+		
+		$body = "From: $name\n Email: $email\n Message:\n $comments";
+		if ($_POST['submit'] && $human == '10') {
+			if (mail ($to, $subject, $body, $from)) }
+				print '<p>Your message has been sent!</p>';
+			} 
+			else { 
+				print '<p>Something went wrong. Please try again.</p>';
+			}
+		?>	
+		
+		<!-- Footer -->
 	<footer>
 		<p>
 			Malia Thornton | <a href="mailto: thornmal@email.meredith.edu">thornmal@email.meredith.edu</a> | 
-			<a href="http://www.linkedin.com/in/maliathornton/" target="new"><img src="linkedin.png"></a>
+			<a href="http://www.linkedin.com/in/maliathornton/" target="new"><img src="images/linkedin.png"></a>
 		</p>
 	</footer>
 </body>

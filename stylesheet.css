@@ -59,7 +59,7 @@ nav {
 
 a {
 	color: black;
-	font-family: Century Gothic, sans-serif;
+	font-family: Century Gothic;
 	text-decoration: none;
 }
 
@@ -157,11 +157,6 @@ aside h2 {
 
 #contactme {
 	text-align: center;
-}
-
-h5 {
-	color: gray;
-	font-size: 9px;
 }
 
 fieldset {
