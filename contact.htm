@@ -30,66 +30,67 @@
 	
 	<!-- PHP used to make the form functional -->
 	<?php
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$comments = $_POST['comments'];
-		$from = 'From: Portfolio of Malia Thornton';
-		$to = 'maliathornton@gmail.com';
-		$subject = 'Hello';
-		$human = $_POST['human'];
-		
-		$body = "From: $name\n Email: $email\n Message:\n $comments";
-		if ($_POST['submit'] && $human == '10') {
-			if (mail ($to, $subject, $body, $from)) {
-				print '<p>Your message has been sent!</p>';
-			} 
-			else { 
-				print '<p>Something went wrong. Please try again.</p>';
-			}
-		?>	
-		
-		<form id="contact" name="contact" method="post" action="index.php">
-		<legend><h3>About you</h3></legend>
-			<fieldset id="info">
-				<label for="name"><strong>Name *</strong></label>
-				<input name="name" id="name" type="text"
-					placeholder="e.g. Malia Thornton" required="required" />
+	    $name = $_POST['name'];
+	    $email = $_POST['email'];
+	    $comments = $_POST['comments'];
+	    $from = 'From: TangledDemo'; 
+	    $to = 'contact@tangledindesign.com'; 
+	    $subject = 'Hello';
+	    $human = $_POST['human'];
 				
-				<label for="email"><strong>Email *</strong></label>
-				<input name="email" id="email" type="text"
-					placeholder="e.g. thornmal@email.meredith.edu" required="required" />
-				
-				<label for="phone"><strong>Phone</strong></label>
-				<input name="phone" id="phone" type="text"
-					placeholder="(919) 555-5555" />
-				
-				<label for="website"><strong>Website</strong></label>
-				<input name="website" id="website" type="text"
-					placeholder="e.g. Facebook" />
-				
-				<label for="website"><strong>Website</strong></label>
-				<input name="website" id="website" type="text"
-					placeholder="e.g. LinkedIn" />
+	    $body = "From: $name\n E-Mail: $email\n Message:\n $message";
 					
-				<label for="preference"><strong>Preferred Method of Contact</strong></label>
-				<select name="preference" id="preference" size="1">
-					<option value="email">Email</option>
-					<option value="phone">Phone</option>
-				</select>
-					
-				<label for="found"><strong>How did you hear about Malia?</strong></label>
-				<input name="found" id="found" type="text"
-					placeholder="e.g. LinkedIn" />
-				
-				<label for="comments"><strong>Inquiries, project details, etc.</strong></label>
-				<textarea name="comments" id="comments"></textarea>
-			</fieldset>
+	    if ($_POST['submit'] && $human == '4') {				 
+	        if (mail ($to, $subject, $body, $from)) { 
+		    echo '<p>Your message has been sent!</p>';
+		} else { 
+		    echo '<p>Something went wrong, go back and try again!</p>'; 
+		} 
+	    } 
+	?>
+		
+	<form id="contact" name="contact" method="post" action="index.php">
+	<legend><h3>About you</h3></legend>
+		<fieldset id="info">
+			<label for="name"><strong>Name *</strong></label>
+			<input name="name" id="name" type="text"
+				placeholder="e.g. Malia Thornton" required="required" />
 			
-			<p>
-				<input type="submit" value="SUBMIT" />
-				<input type="reset" value="CANCEL" />
-			</p>
-		</form>
+			<label for="email"><strong>Email *</strong></label>
+			<input name="email" id="email" type="text"
+				placeholder="e.g. thornmal@email.meredith.edu" required="required" />
+			
+			<label for="phone"><strong>Phone</strong></label>
+			<input name="phone" id="phone" type="text"
+				placeholder="(919) 555-5555" />
+			
+			<label for="website"><strong>Website</strong></label>
+			<input name="website" id="website" type="text"
+				placeholder="e.g. Facebook" />
+			
+			<label for="website"><strong>Website</strong></label>
+			<input name="website" id="website" type="text"
+				placeholder="e.g. LinkedIn" />
+				
+			<label for="preference"><strong>Preferred Method of Contact</strong></label>
+			<select name="preference" id="preference" size="1">
+				<option value="email">Email</option>
+				<option value="phone">Phone</option>
+			</select>
+				
+			<label for="found"><strong>How did you hear about Malia?</strong></label>
+			<input name="found" id="found" type="text"
+				placeholder="e.g. LinkedIn" />
+			
+			<label for="comments"><strong>Inquiries, project details, etc.</strong></label>
+			<textarea name="comments" id="comments"></textarea>
+		</fieldset>
+		
+		<p>
+			<input type="submit" value="SUBMIT" />
+			<input type="reset" value="CANCEL" />
+		</p>
+	</form>
 	</section>
 	
 	
