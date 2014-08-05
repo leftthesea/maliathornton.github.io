@@ -5,23 +5,27 @@
 <body>
   // Used for the contact form
 	<?php
-	    $name = $_POST['name'];
-	    $email = $_POST['email'];
-	    $comments = $_POST['comments'];
-	    $from = 'From: Portfolio of Malia Thornton'; 
-	    $to = 'maliathornton@gmail.com'; 
-	    $subject = 'Hello!';
-	    $human = $_POST['human'];
-				
-	    $body = "From: $name\n E-Mail: $email\n Message:\n $message";
-					
-	    if ($_POST['submit']) {				 
-	        if (mail ($to, $subject, $body, $from)) { 
-		    print '<p>Your message has been sent!</p>';
-		} else { 
-		    print '<p>Something went wrong, go back and try again!</p>'; 
-		} 
-	    } 
+		if(isset($_POST['submit'])) {
+		$to = "maliathornton@gmail.com";
+		$subject = "Hello!";
+		 
+		// data the visitor provided
+		$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+		$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+		$comments = filter_var($_POST['comment'], FILTER_SANITIZE_STRING);
+		 
+		//constructing the message
+		$body = " From: $name\n\n E-Mail: $email\n\n Message:\n\n $comment";
+		 
+		// ...and away we go!
+		mail($to, $subject, $body);
+		 
+		// redirect to confirmation
+		header('Location: contact.htm');
+		print "Thank you! Your message has been sent.";
+		} else {
+		print "There was an error somewhere. Please try again.";
+		}
 	?>
 
 </body>
